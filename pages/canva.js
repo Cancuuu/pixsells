@@ -2,19 +2,13 @@ import React, {useEffect, useState, useRef} from 'react'
 import Options from "../components/options";
 import Map from "../components/map";
 
-
-
 const CanvasEditor = () => {
-  const [currentColor, setCurrentColor] = useState("#000");
-  const app = useRef();
+  const [currentColor, setCurrentColor] = useState("#56B6C2");
 
   return (
-    <div className='w-full container'>
-      <div className="mapEditorContainer">
+    <div className=''>
         <Options handleColor={setCurrentColor}/>
         <Map currentColor={currentColor} />
-      </div>
-      <div ref={app}></div>
     </div>
   );
 }

@@ -10,10 +10,7 @@ const Options = ({handleColor}) => {
     <div className="optionsContainer">
         <div className="customColorContainer">
           <span>Tile Color (HEX)</span>
-          <input className="input" type="text" placeholder="#123" onChange={(e) => {
-              console.log(e.target.value)
-              handleColor(e?.target?.value)
-            }}/>
+          <input className="text-black" type="text" placeholder="#123" onChange={(e) => handleColor(e.target.value) }/>
         </div>
         <div className="defaultColorContainer">
           <div 

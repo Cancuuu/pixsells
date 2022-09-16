@@ -96,10 +96,25 @@ const [context, setContext] = useState();
     }
   }
 
+
+  useEffect(() => {
+    if (canvas && context) {
+      loadMap(mapArr);
+    }
+  }, [canvas, context]);
+
+  useEffect(() => {
+    const canvas = map.current
+    const context = canvas.getContext('2d');
+    setCanvas(canvas);
+    setContext(context)
+  }, []);
+
   const renderPixel = (color, x, y) => {
+    console.log(color, x, y)
     context.beginPath();
     context.rect(x, y, assetWidth, assetHeight);
-    context.fillStyle = color;
+    context.fillStyle = color.currentColor;
     context.fill();
   }
 
@@ -110,23 +125,9 @@ const [context, setContext] = useState();
     renderPixel(currentColor, x, y);
   }
 
-  useEffect(() => {
-    if (canvas && context) {
-      loadMap(mapArr);
-    }
-  }, [canvas, context])
-
-  useEffect(() => {
-    const canvas = map.current
-    const context = canvas.getContext('2d');
-    setCanvas(canvas);
-    setContext(context)
-  }, []);
-
-
   return (
     <div className="mapContainer">
-      <canvas ref={map} width={mapWidth} height={mapHeight} onClick={(e) => getMousePos(e)}/>
+      <canvas ref={map} width={mapWidth} height={mapHeight} onClick={(e) => {getMousePos(e)}}/>
     </div>
   )
 }
