@@ -19,70 +19,74 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+@media (prefers-color-scheme: dark) {}
 
-  body {
-    color: white;
-    background: black;
-  }
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+  background-color: #2b2b2b;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
 }
 
-.canvas {
-  width: 400px;
-  height: 250px;
-}
-
-.canvasarea {
+.mapEditorContainer {
   display: flex;
+  width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+
+.customColorContainer {
+  display: flex;
+  width: 100%;
   align-items: center;
+  justify-content: space-evenly;
 }
 
-.clearcanvas {
-  color: black;
-  background: white;
-  padding: 0px 2px 0px 0px;
+.square {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #000;
 }
 
-.white {
-  background-color: white;
+.defaultColorContainer {
+  height: 100px;
+  margin-top: 20px;
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.lightblue {
-  background-color: rgb(0, 188, 212);
+.optionsContainer {
+  width: 300px;
+  height: 320px;
+  background-color: #5225bd;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
 }
 
-.blue {
-  background-color: rgb(3, 169, 244);
+.mapContainer {
+  width: 640px;
 }
 
-.darkblue {
-  background-color: rgb(33, 150, 243);
+.optionsContainer {
+  width: 100%;
 }
 
-.lightgreen {
-  background-color: lightgreen;
-}
-
-.green {
-  background-color: green;
-}
-
-.darkgreen {
-  background-color: darkgreen;
-}
-
-.pixel {
-  width: 10px;
-  height: 10px;
-}
-
-.pixel:hover {
-  background-color: rgb(187, 187, 187);
-}
-
-.pixel.current-color {
-  border: 3px dashed rgb(192, 23, 31);
+@media(max-width: 1000px) {
+  .mapEditorContainer {
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+    width: 100%;
+  }
 }

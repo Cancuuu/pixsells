@@ -1,13 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-const Options = (handleColor) => {
-
-
-  const handleChange = (e) => {
-    console.log(e.target.value);
-    const value = e.target.value;  
-    handleColor(value)
-  }
+const Options = ({handleColor}) => {
   
   const handleDefaultColor = (color) => {
     handleColor(color)
@@ -18,7 +11,10 @@ const Options = (handleColor) => {
         <h1>Tile editor</h1>
         <div className="customColorContainer">
           <span>Tile Color (HEX)</span>
-          <input className="input" type="text" placeholder="#123" onChange={(e) => handleChange(e)}/>
+          <input className="input" type="text" placeholder="#123" onChange={(e) => {
+              console.log(e.target.value)
+              handleColor(e?.target?.value)
+            }}/>
         </div>
         <div className="defaultColorContainer">
           <div 
