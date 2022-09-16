@@ -29,3 +29,60 @@ a {
     background: black;
   }
 }
+
+.canvas {
+  width: 400px;
+  height: 250px;
+}
+
+.canvasarea {
+  display: flex;
+  align-items: center;
+}
+
+.clearcanvas {
+  color: black;
+  background: white;
+  padding: 0px 2px 0px 0px;
+}
+
+.white {
+  background-color: white;
+}
+
+.lightblue {
+  background-color: rgb(0, 188, 212);
+}
+
+.blue {
+  background-color: rgb(3, 169, 244);
+}
+
+.darkblue {
+  background-color: rgb(33, 150, 243);
+}
+
+.lightgreen {
+  background-color: lightgreen;
+}
+
+.green {
+  background-color: green;
+}
+
+.darkgreen {
+  background-color: darkgreen;
+}
+
+.pixel {
+  width: 10px;
+  height: 10px;
+}
+
+.pixel:hover {
+  background-color: rgb(187, 187, 187);
+}
+
+.pixel.current-color {
+  border: 3px dashed rgb(192, 23, 31);
+}
