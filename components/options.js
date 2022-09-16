@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 const Options = ({handleColor}) => {
   
@@ -8,7 +8,6 @@ const Options = ({handleColor}) => {
 
   return (
     <div className="optionsContainer">
-        <h1>Tile editor</h1>
         <div className="customColorContainer">
           <span>Tile Color (HEX)</span>
           <input className="input" type="text" placeholder="#123" onChange={(e) => {

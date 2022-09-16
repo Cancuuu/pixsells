@@ -87,10 +87,10 @@ const [context, setContext] = useState();
         let color = rowPixel[x];
         let tileNumber = x;
 
-        this.renderPixel(
+        renderPixel(
           color,
-          tileNumber * this.assetWidth,
-          rowNumber * this.assetHeight
+          tileNumber * assetWidth,
+          rowNumber * assetHeight
         );
       }
     }
@@ -98,15 +98,15 @@ const [context, setContext] = useState();
 
   const renderPixel = (color, x, y) => {
     context.beginPath();
-    context.rect(x, y, this.assetWidth, this.assetHeight);
+    context.rect(x, y, assetWidth, assetHeight);
     context.fillStyle = color;
     context.fill();
   }
 
   const getMousePos = (e) => {
     const rect = canvas.getBoundingClientRect();
-    const x = Math.floor((e.clientX - rect.left) / this.assetWidth) * this.assetWidth;
-    const y = Math.floor((e.clientY - rect.top) / this.assetHeight) * this.assetHeight;
+    const x = Math.floor((e.clientX - rect.left) / assetWidth) * assetWidth;
+    const y = Math.floor((e.clientY - rect.top) / assetHeight) * assetHeight;
     renderPixel(currentColor, x, y);
   }
 
@@ -126,7 +126,7 @@ const [context, setContext] = useState();
 
   return (
     <div className="mapContainer">
-      <canvas ref={map} width={this.mapWidth} height={this.mapHeight} onClick={(e) => getMousePos(e)}/>
+      <canvas ref={map} width={mapWidth} height={mapHeight} onClick={(e) => getMousePos(e)}/>
     </div>
   )
 }

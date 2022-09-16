@@ -1,16 +1,12 @@
 import React, {useEffect, useState, useRef} from 'react'
 import Options from "../components/options";
-import Map from "../components/options";
+import Map from "../components/map";
 
 
 
 const CanvasEditor = () => {
-  const [currentColor, setCurrentColor] = useState("#000")
-  const app = useRef()
-
-  useEffect(() => {
-    
-  }, []);
+  const [currentColor, setCurrentColor] = useState("#000");
+  const app = useRef();
 
   return (
     <div className='w-full container'>
