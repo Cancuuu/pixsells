@@ -76,10 +76,12 @@ export default function Home() {
             </div>
           </header>
           <div className={styles.home_container}>
-            <div className={styles.text_div}></div>
+            <div className={styles.text_div}>
+              <video src="/canvas_live.mp4" autoPlay />
+            </div>
             <Image
               src="/paint-with-us.svg"
-              alt="logo"
+              alt="paint with us"
               width="400px"
               height="40px"
               className="paint-with"
