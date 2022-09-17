@@ -56,7 +56,7 @@ export default function Home() {
               >
                 <a href="#DAO">DAO</a>
               </button>
-              <button
+              {/* <button
                 style={{
                   background: "#1061B1",
                   border: "4px solid #1061B1",
@@ -69,8 +69,8 @@ export default function Home() {
                 }}
               >
                 CONNECT
-              </button>
-              {/* <CustomButton /> */}
+              </button> */}
+              <CustomButton />
             </div>
           </header>
           <div className={styles.home_container}>
