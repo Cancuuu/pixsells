@@ -1,7 +1,6 @@
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import Head from "next/head";
-import { handleSubmitNewPixel } from "../lib/socket";
 import CustomButton from "../components/customConnectButton";
 
 export default function Home() {
@@ -44,7 +43,6 @@ export default function Home() {
                 PAINT!
               </button>
               <button
-                onClick={() => handleSubmitNewPixel()}
                 style={{
                   background: "#F8F8F8",
                   border: "4px solid #1061B1",

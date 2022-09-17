@@ -1,5 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
+
+import { socket, sendNewPixel } from "../lib/socket";
+
+
+
 const Map = (currentColor) => {
 const [canvas, setCanvas] = useState();
 const [context, setContext] = useState();
@@ -87,8 +92,6 @@ const [context, setContext] = useState();
       for (let x = 0; x < rowPixel.length; x++) {
         let color = rowPixel[x];
         let tileNumber = x;
-
-
       }
     }
   }
@@ -99,6 +102,14 @@ const [context, setContext] = useState();
     }
   }, [canvas, context]);
 
+  const addNewPixel = ({x, y, color}) => {
+    renderPixel(color, x, y, true)
+  }
+  
+  socket.on("pixel", addNewPixel);
+
+
+
   useEffect(() => {
     const canvas = map.current
     const context = canvas.getContext('2d');
@@ -106,8 +117,10 @@ const [context, setContext] = useState();
     setContext(context)
   }, []);
 
-  const renderPixel = (color, x, y) => {
-    console.log(color, x, y);
+  const renderPixel = (color, x, y, recived) => {
+    if(!recived){
+      sendNewPixel({x, y, color});
+    }
     context.beginPath();
     context.rect(x, y, assetWidth, assetHeight);
     context.fillStyle = color.currentColor;
@@ -118,12 +131,15 @@ const [context, setContext] = useState();
     const rect = canvas.getBoundingClientRect();
     const x = Math.floor((e.clientX - rect.left) / assetWidth) * assetWidth;
     const y = Math.floor((e.clientY - rect.top) / assetHeight) * assetHeight;
-    renderPixel(currentColor, x, y);
+    renderPixel(currentColor, x, y, false);
   }
+
 
   return (
     <div className="">
-      <canvas ref={map} width={mapWidth} height={mapHeight} className="border-black border-2" onClick={(e) => {getMousePos(e)}}/>
+      <canvas ref={map} width={mapWidth} height={mapHeight} className="border-black border-2" onClick={(e) => {
+        getMousePos(e);        
+      }}/>
     </div>
   )
 }
