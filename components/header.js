@@ -7,13 +7,14 @@ import CustomButton from "./customConnectButton";
 const Header = () => {
   return (
     <header className="header">
-    <Image
+      <Link href="/">
+      <Image
       src="/pixsells-logo.svg"
       alt="logo"
       layout="fixed"
       width="300px"
       height="40px"
-    />
+    /></Link>
     <div className={styles.buttons}>
       <Link href="/canva">
       <button
