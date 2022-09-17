@@ -1,9 +1,15 @@
-import React, {useEffect, useState, useRef} from 'react'
+import React, {useEffect, useState, useContext} from 'react'
 import Options from "../components/options";
 import Map from "../components/map";
+import { CanvasContext } from '../context/CanvasProvider';
+
 
 const CanvasEditor = () => {
+
+  const {canvas} = useContext(CanvasContext);
   const [currentColor, setCurrentColor] = useState("#FFF");
+
+  console.log(canvas)
 
   return (
     <div className='flex flex-col justify-center items-center'>

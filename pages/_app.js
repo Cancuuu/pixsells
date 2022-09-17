@@ -13,6 +13,9 @@ import {
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 
+import CanvasProvider from '../context/CanvasProvider';
+
+
 const { chains, provider } = configureChains(
   [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum],
   [
@@ -33,11 +36,15 @@ const wagmiClient = createClient({
 })
 
 function MyApp({ Component, pageProps }) {
-  return (<WagmiConfig client={wagmiClient}>
-    <RainbowKitProvider chains={chains}>
-    <Component {...pageProps} />
-    </RainbowKitProvider>
-  </WagmiConfig>) 
+  return (
+  <CanvasProvider>
+    <WagmiConfig client={wagmiClient}>
+      <RainbowKitProvider chains={chains}>
+        <Component {...pageProps} />
+      </RainbowKitProvider>
+    </WagmiConfig>
+  </CanvasProvider>
+  ) 
 }
 
 export default MyApp
