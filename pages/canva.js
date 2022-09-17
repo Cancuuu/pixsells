@@ -3,7 +3,7 @@ import Options from "../components/options";
 import Map from "../components/map";
 
 const CanvasEditor = () => {
-  const [currentColor, setCurrentColor] = useState("#56B6C2");
+  const [currentColor, setCurrentColor] = useState("#FFF");
 
   return (
     <div className=''>

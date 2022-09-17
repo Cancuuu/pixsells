@@ -69,10 +69,10 @@ const [context, setContext] = useState();
     ]
   ];
 
-  let assetWidth = 16;
-  let assetHeight = 16;
-  let mapWidth = assetWidth * 40;
-  let mapHeight = assetHeight * 20;
+  let assetWidth = 10;
+  let assetHeight = 10;
+  let mapWidth = assetWidth * 400;
+  let mapHeight = assetHeight * 250;
 
   const [mapCanvas, setMapCanvas] = useState('');
   const [mapCtx, setMapCtx] = useState('');
@@ -87,15 +87,10 @@ const [context, setContext] = useState();
         let color = rowPixel[x];
         let tileNumber = x;
 
-        renderPixel(
-          color,
-          tileNumber * assetWidth,
-          rowNumber * assetHeight
-        );
+
       }
     }
   }
-
 
   useEffect(() => {
     if (canvas && context) {
@@ -111,7 +106,6 @@ const [context, setContext] = useState();
   }, []);
 
   const renderPixel = (color, x, y) => {
-    console.log(color, x, y)
     context.beginPath();
     context.rect(x, y, assetWidth, assetHeight);
     context.fillStyle = color.currentColor;
@@ -126,8 +120,8 @@ const [context, setContext] = useState();
   }
 
   return (
-    <div className="mapContainer">
-      <canvas ref={map} width={mapWidth} height={mapHeight} onClick={(e) => {getMousePos(e)}}/>
+    <div className="">
+      <canvas ref={map} width={mapWidth} height={mapHeight} className="border-black border-2" onClick={(e) => {getMousePos(e)}}/>
     </div>
   )
 }
