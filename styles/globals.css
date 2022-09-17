@@ -19,13 +19,71 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 
-  body {
-    color: white;
-    background: black;
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+}
+
+.mapEditorContainer {
+  display: flex;
+  margin: auto;
+}
+
+h1 {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.customColorContainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.square {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #000;
+}
+
+.defaultColorContainer {
+  height: 100px;
+  margin-top: 20px;
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.optionsContainer {
+  width: 300px;
+  height: 320px;
+  background-color: #5225bd;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+}
+
+.mapContainer {
+  width: 400px;
+  height: 250px;
+}
+
+.optionsContainer {
+  width: 100%;
+}
+
+@media(max-width: 1000px) {
+  .mapEditorContainer {
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+    width: 100%;
   }
 }
