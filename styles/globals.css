@@ -11,9 +11,9 @@ body {
 }
 
 .main {
-  min-height: 100vh;
+  /* min-height: 100vh;
   padding: 4rem 0;
-  padding-bottom: 0;
+  padding-bottom: 0; */
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -31,8 +31,8 @@ body {
 }
 
 .header {
-  position: absolute;
-  top: 0;
+  /* position: absolute;
+  top: 0; */
   padding-top: 15px;
   padding-left: 25px;
   width: 100%;
