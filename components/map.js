@@ -68,9 +68,10 @@ const [context, setContext] = useState();
       '#FFF','#FFF','#FFF','#FFF','#FFF','#FFF','#FFF','#FFF','#FFF','#FFF', '#FFF','#FFF','#FFF','#FFF','#FFF','#FFF','#FFF','#FFF','#FFF','#FFF', '#FFF','#FFF','#FFF','#FFF','#FFF','#FFF','#FFF','#FFF','#FFF','#FFF', '#FFF','#FFF','#FFF','#FFF','#FFF','#FFF','#FFF','#FFF','#FFF','#FFF'
     ]
   ];
+  
 
-  let assetWidth = 10;
-  let assetHeight = 10;
+  let assetWidth = 3;
+  let assetHeight = 3;
   let mapWidth = assetWidth * 400;
   let mapHeight = assetHeight * 250;
 
@@ -106,6 +107,7 @@ const [context, setContext] = useState();
   }, []);
 
   const renderPixel = (color, x, y) => {
+    console.log(color, x, y);
     context.beginPath();
     context.rect(x, y, assetWidth, assetHeight);
     context.fillStyle = color.currentColor;
