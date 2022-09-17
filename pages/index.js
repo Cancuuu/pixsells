@@ -1,6 +1,7 @@
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import Head from "next/head";
+import {handleSubmitNewPixel} from '../lib/socket'
 import CustomButton from "../components/customConnectButton";
 
 export default function Home() {
