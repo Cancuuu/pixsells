@@ -1,6 +1,7 @@
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import Head from "next/head";
+import Link from "next/link";
 import { handleSubmitNewPixel } from "../lib/socket";
 import CustomButton from "../components/customConnectButton";
 
@@ -29,35 +30,39 @@ export default function Home() {
               height="40px"
             />
             <div className={styles.buttons}>
-              <button
-                style={{
-                  background: "#F8F8F8",
-                  border: "4px solid #1061B1",
-                  boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-                  width: "200px",
-                  height: "50px",
-                  color: "#1061B1",
-                  fontWeight: "bold",
-                  margin: "0px 5px",
-                }}
-              >
-                PAINT!
-              </button>
-              <button
-                onClick={() => handleSubmitNewPixel()}
-                style={{
-                  background: "#F8F8F8",
-                  border: "4px solid #1061B1",
-                  boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-                  width: "200px",
-                  height: "50px",
-                  color: "#1061B1",
-                  fontWeight: "bold",
-                  margin: "0px 5px",
-                }}
-              >
-                <a href="#DAO">DAO</a>
-              </button>
+              <Link href="/paint">
+                <button
+                  style={{
+                    background: "#F8F8F8",
+                    border: "4px solid #1061B1",
+                    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                    width: "200px",
+                    height: "50px",
+                    color: "#1061B1",
+                    fontWeight: "bold",
+                    margin: "0px 5px",
+                  }}
+                >
+                  PAINT!
+                </button>
+              </Link>
+              <Link href="#DAO">
+                <button
+                  onClick={() => handleSubmitNewPixel()}
+                  style={{
+                    background: "#F8F8F8",
+                    border: "4px solid #1061B1",
+                    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                    width: "200px",
+                    height: "50px",
+                    color: "#1061B1",
+                    fontWeight: "bold",
+                    margin: "0px 5px",
+                  }}
+                >
+                  DAO
+                </button>
+              </Link>
               {/* <button
                 style={{
                   background: "#1061B1",
