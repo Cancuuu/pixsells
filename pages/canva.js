@@ -2,6 +2,7 @@ import React, {useEffect, useState, useContext} from 'react'
 import Options from "../components/options";
 import Map from "../components/map";
 import { CanvasContext } from '../context/CanvasProvider';
+import Header from '../components/header';
 
 
 const CanvasEditor = () => {
@@ -13,7 +14,8 @@ const CanvasEditor = () => {
 
   return (
     <div className='flex flex-col justify-center items-center'>
-        <div className='flex justify-center items-center'>
+        <Header/>
+        <div className='mt-12 flex justify-center items-center'>
           <Map currentColor={currentColor} />
         </div>
         <div className='flex items-center justify-center'>

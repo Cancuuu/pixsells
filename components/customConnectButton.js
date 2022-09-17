@@ -87,29 +87,18 @@ const CustomButton = () => {
                       margin: "0px 5px",
                     }}
                   >
-                    {chain.hasIcon && (
-                      <div
-                        style={{
-                          background: chain.iconBackground,
-                          width: 12,
-                          height: 12,
-                          borderRadius: 999,
-                          overflow: "hidden",
-                          marginRight: 4,
-                        }}
-                      >
-                        {chain.iconUrl && (
-                          <Image
-                            alt={chain.name ?? "Chain icon"}
-                            src={chain.iconUrl}
-                            style={{ width: 12, height: 12 }}
-                          />
-                        )}
-                      </div>
-                    )}
                     {chain.name}
                   </button>
-                  <button onClick={openAccountModal} type="button">
+                  <button style={{
+                      background: "#1061B1",
+                      border: "4px solid #1061B1",
+                      boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                      width: "200px",
+                      height: "50px",
+                      color: "#F8F8F8",
+                      fontWeight: "bold",
+                      margin: "0px 5px",
+                    }} onClick={openAccountModal} type="button">
                     {account.displayName}
                     {account.displayBalance
                       ? ` (${account.displayBalance})`
