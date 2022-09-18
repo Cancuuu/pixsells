@@ -10,7 +10,7 @@ import { SketchPicker } from 'react-color';
 const CanvasEditor = () => {
 
   // const {canvas} = useContext(CanvasContext);
-  const [currentColor, setCurrentColor] = useState("#000");
+  const [currentColor, setCurrentColor] = useState("#000000");
 
   return (
     <div className='flex flex-col justify-center items-center'>
