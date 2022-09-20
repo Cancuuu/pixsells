@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { pixelPainted , socket, test} from "../lib/socket";
+import { pixelPainted , socket, handleNewMessage} from "../lib/socket";
 
 
 
@@ -12,12 +12,30 @@ const Map= (currentColor) => {
   const [context, setContext] = useState();
 
   const pixelToPaint = (pixel) => {
-    console.log(pixel, 'pixel');
     const { x, y, color } = JSON.parse(pixel);
     renderForeingePixel(color, x, y)
   };
+
+  const handleCanva = (canva) =>{
+    canva = JSON.parse(canva)
+
+     for (let i = 0; i < canva.length; i = i + 3) {
+      for (let j = 0; j < canva[i].length; j++) {
+          if (canva[i][j] !== '#FFF' && canva[i][j]) {
+            console.log(i, j, canva[i][j]);
+            renderForeingePixel({currentColor:canva[i][j]}, i, j);
+          }        
+      }
+      
+     }
+
+
+
+  }
   
   socket.on("pixel", pixelToPaint);
+  socket.on("canva", handleCanva);
+
   const map = useRef(null);
 
   let mapArr = [
